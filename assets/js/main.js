@@ -880,7 +880,7 @@
       case 'whoami':
         resp.innerHTML = `
           <div class="text-cyan-300 font-bold">Dwi Hardianto</div>
-          <div class="text-slate-300">IT Chief at PT Aneka Bumi Pratama (ITOCHU Group) & Founder of Bedulur Teknologi Indonesia.</div>
+          <div class="text-slate-300">IT Manager at OUCRU Indonesia (Oxford University Clinical Research Unit) & Founder of Bedulur Teknologi Indonesia.</div>
           <div class="text-slate-400">14+ Years of hands-on mastery: Network, Systems, Cloud, Enterprise Backend, Flutter, and Full-Stack Architecture.</div>
         `;
         break;
@@ -911,7 +911,8 @@
       case 'exp':
         resp.innerHTML = `
           <div class="space-y-1">
-            <div>• <span class="text-cyan-400">2018 - Present:</span> IT Chief - PT Aneka Bumi Pratama (ITOCHU Group)</div>
+            <div>• <span class="text-cyan-400">2024 - Present:</span> IT Manager - OUCRU Indonesia (Oxford University Clinical Research Unit)</div>
+            <div>• <span class="text-cyan-400">2018 - 2024:</span> IT Chief - PT Aneka Bumi Pratama (ITOCHU Group)</div>
             <div>• <span class="text-cyan-400">2018 - 2019:</span> Senior System Admin - PT Mitra Integrasi Informatika</div>
             <div>• <span class="text-cyan-400">2015 - 2018:</span> IT System Admin - PT Mitsui Leasing Capital Indonesia</div>
             <div>• <span class="text-cyan-400">2014 - 2015:</span> IT Support Officer - PT Rezki Curah Prima</div>
