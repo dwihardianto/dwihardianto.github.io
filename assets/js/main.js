@@ -788,14 +788,19 @@
       });
     });
 
-    // Skill Progress Bars Fill Trigger
+    // Architecture Capabilities Stack Items Stagger
     ScrollTrigger.create({
       trigger: '#skills',
       start: 'top 75%',
+      once: true,
       onEnter: () => {
-        document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-          const targetWidth = bar.dataset.percentage || '80%';
-          bar.style.width = targetWidth;
+        gsap.from('.stack-item', {
+          opacity: 0,
+          y: 18,
+          duration: 0.55,
+          stagger: 0.035,
+          ease: 'power2.out',
+          clearProps: 'transform,opacity'
         });
       }
     });
@@ -827,9 +832,6 @@
 
   } else {
     // Fallback if GSAP is blocked
-    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-      bar.style.width = bar.dataset.percentage || '80%';
-    });
     document.querySelectorAll('.counter-number').forEach(counter => {
       counter.textContent = counter.dataset.target;
     });
