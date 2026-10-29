@@ -443,7 +443,7 @@
 
     filtered.forEach((p, idx) => {
       const card = document.createElement('div');
-      card.className = 'glass-card rounded-2xl p-6 flex flex-col justify-between group tilt-card project-card cursor-pointer opacity-0';
+      card.className = 'glass-card rounded-2xl p-6 flex flex-col justify-between group tilt-card project-card cursor-pointer';
       card.dataset.projectId = p.id;
 
       const techBadgesHtml = p.techStack.slice(0, 4).map(t => `<span class="tech-pill">${t}</span>`).join('');
@@ -741,74 +741,68 @@
 
     // Fade-up Section Headers & Blocks
     document.querySelectorAll('[data-reveal="fade-up"]').forEach(el => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 45,
-        duration: 0.85,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(el, 
+        { opacity: 0.2, y: 30 },
+        {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 92%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          clearProps: 'all'
+        }
+      );
     });
 
-    // Staggered Cards (About Pillars, Skills, Contact)
+    // Staggered Cards (About Pillars, Skills Bento, Contact)
     document.querySelectorAll('[data-stagger="card"]').forEach(container => {
       const cards = container.children;
-      gsap.from(cards, {
-        scrollTrigger: {
-          trigger: container,
-          start: 'top 82%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 50,
-        scale: 0.96,
-        duration: 0.75,
-        stagger: 0.1,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(cards, 
+        { opacity: 0.3, y: 25 },
+        {
+          scrollTrigger: {
+            trigger: container,
+            start: 'top 92%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          stagger: 0.08,
+          ease: 'power2.out',
+          clearProps: 'all'
+        }
+      );
     });
 
     // Timeline Items Animation
     document.querySelectorAll('.timeline-item').forEach((item, idx) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        x: -40,
-        duration: 0.8,
-        delay: idx * 0.05,
-        ease: 'power3.out'
-      });
-    });
-
-    // Architecture Capabilities Stack Items Stagger
-    ScrollTrigger.create({
-      trigger: '#skills',
-      start: 'top 75%',
-      once: true,
-      onEnter: () => {
-        gsap.from('.stack-item', {
-          opacity: 0,
-          y: 18,
-          duration: 0.55,
-          stagger: 0.035,
+      gsap.fromTo(item, 
+        { opacity: 0.2, x: -25 },
+        {
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 92%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          delay: idx * 0.04,
           ease: 'power2.out',
-          clearProps: 'transform,opacity'
-        });
-      }
+          clearProps: 'all'
+        }
+      );
     });
 
     // Animated Numbers Counter in Metrics Section
     ScrollTrigger.create({
       trigger: '.metric-item',
-      start: 'top 85%',
+      start: 'top 92%',
       once: true,
       onEnter: () => {
         document.querySelectorAll('.counter-number').forEach(counter => {
@@ -818,7 +812,7 @@
 
           gsap.to(obj, {
             val: target,
-            duration: 2.0,
+            duration: 1.8,
             ease: 'power2.out',
             onUpdate: () => {
               counter.textContent = decimals > 0 
@@ -830,12 +824,25 @@
       }
     });
 
+    // Refresh triggers on window load
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+
   } else {
     // Fallback if GSAP is blocked
     document.querySelectorAll('.counter-number').forEach(counter => {
       counter.textContent = counter.dataset.target;
     });
   }
+
+  // Universal Safety Fallback: Ensure all cards are visible
+  setTimeout(() => {
+    document.querySelectorAll('.capability-card, .stack-item, .glass-card, .project-card, .timeline-item').forEach(el => {
+      el.style.opacity = '1';
+      el.style.visibility = 'visible';
+    });
+  }, 400);
 
   // ==========================================
   // 10. INTERACTIVE TERMINAL HUD

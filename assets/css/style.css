@@ -440,32 +440,36 @@ header.site-header.scrolled {
 .capability-card {
   position: relative;
   overflow: hidden;
-  background: rgba(13, 17, 26, 0.7);
+  background: rgba(13, 17, 26, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .capability-card:hover {
-  border-color: rgba(6, 182, 212, 0.35);
-  box-shadow: 0 16px 40px -12px rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.45);
+  box-shadow: 0 16px 40px -12px rgba(6, 182, 212, 0.25);
   transform: translateY(-3px);
 }
 
 .stack-item {
   position: relative;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: all 0.25s ease;
 }
 
 .stack-item:hover {
-  background: rgba(6, 182, 212, 0.06);
-  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(6, 182, 212, 0.4);
   transform: translateX(4px);
 }
 

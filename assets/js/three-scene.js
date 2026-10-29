@@ -220,10 +220,20 @@
     crystalGroup.rotation.y += (mouseX * 0.8 - crystalGroup.rotation.y * 0.2) * 0.03;
     crystalGroup.rotation.x += (-mouseY * 0.8 - crystalGroup.rotation.x * 0.2) * 0.03;
 
-    // Scroll effect: move slightly and morph opacity/scale as user scrolls
-    const scrollFactor = scrollY / (document.documentElement.scrollHeight - window.innerHeight || 1);
-    mainGroup.position.y = scrollFactor * 6;
-    mainGroup.rotation.z = scrollFactor * 0.5;
+    // Scroll effect: move back in 3D depth and fade crystal when scrolling away from hero
+    const heroH = window.innerHeight || 800;
+    const fadeRatio = Math.min(Math.max((scrollY - heroH * 0.15) / (heroH * 0.7), 0), 1);
+    const crystalOpacityMult = Math.max(0.12, 1 - fadeRatio * 0.88);
+
+    outerMat.opacity = 0.35 * crystalOpacityMult;
+    innerMat.opacity = 0.6 * crystalOpacityMult;
+    nucleusMat.opacity = 0.4 * crystalOpacityMult;
+    ringMat1.opacity = 0.25 * crystalOpacityMult;
+    ringMat2.opacity = 0.2 * crystalOpacityMult;
+
+    // Push crystal deeper into 3D background as user scrolls
+    crystalGroup.position.z = -fadeRatio * 25;
+    crystalGroup.position.y = 1 - fadeRatio * 5;
 
     // Update floating particles
     const positions = particleGeo.attributes.position.array;
