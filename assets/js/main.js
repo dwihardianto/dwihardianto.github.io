@@ -240,26 +240,26 @@
       }
     },
     {
-      id: 'aurafocus',
+      id: 'larisgo-pos',
       category: 'mobile',
-      title: 'AuraFocus Soundscape Workstation',
-      subtitle: 'Offline-First Audio Synthesizer & Binaural Beats Engine',
-      client: 'Personal & Indie Release',
-      year: '2026',
+      title: 'LarisGo POS - Retail & F&B Application',
+      subtitle: 'Modern Enterprise Point of Sale & Offline-First Inventory',
+      client: 'Bedulur Teknologi Indonesia / Retail Merchants',
+      year: '2025 - 2026',
       image: 'assets/images/projects/61.png',
-      badge: 'Mobile & Audio DSP',
-      description: 'Android audio workstation engineered for deep work productivity and restorative sleep. Features gapless multi-track layering of up to 6 simultaneous soundscapes and 40Hz Gamma binaural beat synthesis.',
+      badge: 'Mobile POS & Retail',
+      description: 'High-performance mobile Point-of-Sale (POS) and inventory management ecosystem tailored for modern retail, grocery, and F&B businesses. Engineered with an offline-first architecture, sub-second checkout speed, hardware ESC/POS thermal printing, and automated Google Drive cloud backups.',
       highlights: [
-        'Custom audio DSP architecture using Riverpod, Drift SQLite, and Android Foreground Service',
-        'Ultradian rhythm focus countdown timer with automated 60-second linear volume fade curve',
-        '100% offline-first local persistence requiring zero internet connection for core features',
-        'Implemented adaptive battery optimization and Google AdMob rewarded passes'
+        'Offline-First transactional engine with local Drift SQLite database preventing sales disruption during network outages',
+        'Hardware ESC/POS Bluetooth & USB thermal printer integration with instant dynamic receipt layout generation',
+        'Real-time sales velocity analytics, low-stock threshold alerts, and Excel/CSV automated accounting exports',
+        'Integrated mobile camera barcode scanner and secure Google Drive OAuth backup synchronization'
       ],
-      techStack: ['Flutter', 'Dart', 'Riverpod', 'Drift SQLite', 'Audio DSP', 'Android 14+'],
+      techStack: ['Flutter', 'Dart', 'Riverpod', 'Drift SQLite', 'Thermal Printing', 'Barcode Scanner', 'Google Drive Sync'],
       metrics: {
-        uptime: 'Offline First',
-        scale: 'Universal Android',
-        impact: 'Studio Quality Audio'
+        uptime: '100% Offline-Ready',
+        scale: 'Multi-Outlet Retail',
+        impact: '<500ms Instant Checkout'
       }
     }
   ];
@@ -911,7 +911,7 @@
           <div>3. Secure DCS - Enterprise ISO Document Control Vault</div>
           <div>4. PulsaGo - Automated Payment Gateway & Digital FinTech</div>
           <div>5. Smart E-Factory - Manufacturing Execution System (MES)</div>
-          <div>6. AuraFocus - Offline Audio Workstation & 40Hz DSP</div>
+          <div>6. LarisGo POS - Offline-First Mobile Point-of-Sale & Retail ERP</div>
         `;
         break;
 
