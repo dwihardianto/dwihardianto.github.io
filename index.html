@@ -1,926 +1,1020 @@
 <!DOCTYPE html>
-<!-- 
-Theme: JANGO - Ultimate Multipurpose HTML Theme Built With Twitter Bootstrap 3.3.7
-Version: 2.0.1
-Author: Themehats
-Site: http://www.themehats.com
-Purchase: http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314?ref=themehats
-Contact: support@themehats.com
-Follow: http://www.twitter.com/themehats
--->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="utf-8" />
-    <title>My Portfolio | Dwi Hardianto Personal Pages</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link
-        href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-        rel='stylesheet' type='text/css'>
-    <link href="assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Dwi Hardianto | IT Chief & Principal Systems Architect</title>
+  <meta name="description"
+    content="Official Personal Branding Homepage of Dwi Hardianto - IT Chief at PT Aneka Bumi Pratama (ITOCHU Group) & Founder of Bedulur Teknologi Indonesia. 14+ Years in Enterprise Architecture, Infrastructure, Cloud, and Full-Stack Engineering." />
+  <meta name="author" content="Dwi Hardianto" />
+  <meta name="theme-color" content="#07090e" />
 
-    <!-- BEGIN: BASE PLUGINS  -->
-    <link href="assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/revo-slider/css/settings.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/revo-slider/css/layers.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/revo-slider/css/navigation.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
-    <!-- END: BASE PLUGINS -->
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dwi Hardianto | IT Chief & Principal Systems Architect" />
+  <meta property="og:description"
+    content="14+ Years mastering Infrastructure, Hybrid Cloud, Enterprise Software Architecture, and Cross-Platform Applications." />
+  <meta property="og:image" content="assets/images/profile/dwihardianto.jpg" />
 
-    <!-- BEGIN THEME STYLES -->
-    <link href="assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-    <link href="assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
-    <link href="assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME STYLES -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-    <link rel="shortcut icon" href="favicon.ico" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#07090e',
+            cyber: {
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              emerald: '#10b981',
+              amber: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/jpeg" href="assets/images/profile/djokerlogo.jpg" />
 </head>
 
-<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
+<body class="bg-obsidian text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
-    <!-- BEGIN: HEADER -->
-    <header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-bordered c-layout-header-default-mobile"
-        id="home" data-minimize-offset="40">
-        <div class="c-navbar">
-            <div class="container-fluid">
-                <!-- BEGIN: BRAND -->
-                <div class="c-navbar-wrapper clearfix">
-                    <div class="c-brand c-pull-left">
-                        <a href="index.html" class="c-logo">
-                            <img src="assets/base/img/layout/logos/djokerlogo.jpg" alt="JANGO" class="c-desktop-logo"
-                                style="width: 65px;">
+  <!-- 3D WebGL Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
 
-                            <img src="assets/base/img/layout/logos/djokerlogo.jpg" alt="JANGO"
-                                class="c-desktop-logo-inverse" style="width: 35px;padding-bottom: 5px;">
-                            <img src="assets/base/img/layout/logos/djokerlogo.jpg" alt="JANGO" class="c-mobile-logo"
-                                style="width: 35px;padding-bottom: 5px;">
-                        </a>
-                        <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-                            <span class="c-line"></span>
-                            <span class="c-line"></span>
-                            <span class="c-line"></span>
-                        </button>
-                        <button class="c-search-toggler" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                    <!-- END: BRAND -->
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="mouse-spotlight"></div>
 
-                    <!-- BEGIN: HOR NAV -->
-                    <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-                    <!-- BEGIN: MEGA MENU -->
-                    <nav class="c-mega-menu c-mega-menu-onepage c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
-                        data-onepage-animation-speed="700">
-                        <ul class="nav navbar-nav c-theme-nav">
-                            <li class="c-onepage-link c-active active">
-                                <a href="#home" class="c-link">Home</a>
-                            </li>
-                            <li class="c-onepage-link ">
-                                <a href="#features" class="c-link">About</a>
-                            </li>
-                            <li class="c-onepage-link ">
-                                <a href="#clients" class="c-link">Experience</a>
-                            </li>
-                            <li class="c-onepage-link ">
-                                <a href="#demos" class="c-link">Portfolio</a>
-                            </li>
-                            <li class="c-onepage-link ">
-                                <a href="#contact" class="c-link">Contact</a>
-                            </li>
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
 
-                            <li class="c-quick-sidebar-toggler-wrapper">
-                                <a href="#" class="c-quick-sidebar-toggler">
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </nav>
-
-                    <!-- END: MEGA MENU -->
-                    <!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-                    <!-- END: HOR NAV -->
-                </div>
-            </div>
+  <!-- ===================================================================
+       HEADER / NAVIGATION
+       =================================================================== -->
+  <header class="site-header fixed top-0 left-0 right-0 z-50 py-4 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo / Monogram -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-cyan-500 via-indigo-500 to-violet-500 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <img src="assets/images/profile/djokerlogo.jpg" alt="Dwi Hardianto" class="w-full h-full object-cover rounded-[10px]" />
         </div>
-    </header>
-    <!-- END: HEADER -->
-    <!-- END: LAYOUT/HEADERS/HEADER-ONEPAGE -->
-
-    <!-- BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
-    <nav class="c-layout-quick-sidebar">
-        <div class="c-header">
-            <button type="button" class="c-link c-close">
-                <i class="icon-login"></i>
-            </button>
+        <div>
+          <span class="font-heading font-bold text-lg text-white group-hover:text-cyan-300 transition-colors tracking-tight flex items-center gap-1.5">
+            DWI HARDIANTO
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          </span>
+          <span class="block text-[11px] font-mono text-cyan-400/90 tracking-wider">SYSTEMS ARCHITECT</span>
         </div>
-        <div class="c-content">
-            <div class="c-section">
-                <h3>PROJECT SHORTCUTS</h3>
-                <div class="c-settings c-demos c-bs-grid-reset-space">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="../default/index.html" class="c-demo-container c-demo-img-lg">
-                                <div class="c-demo-thumb active">
-                                    <img src="assets/base/img/content/quick-sidebar/default.jpg"
-                                        class="c-demo-thumb-img" />
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="../corporate_1/index.html" class="c-demo-container">
-                                <div class="c-demo-thumb  c-thumb-left">
-                                    <img src="assets/base/img/content/quick-sidebar/corporate_1.jpg"
-                                        class="c-demo-thumb-img" />
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="../agency_1/index.html" class="c-demo-container">
-                                <div class="c-demo-thumb  c-thumb-right">
-                                    <img src="assets/base/img/content/quick-sidebar/corporate_1-onepage.jpg"
-                                        class="c-demo-thumb-img" />
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav><!-- END: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
+      </a>
 
-    <!-- BEGIN: PAGE CONTAINER -->
-    <div class="c-layout-page">
-        <!-- BEGIN: PAGE CONTENT -->
-        <!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-5 -->
-        <section class="c-layout-revo-slider c-layout-revo-slider-5" dir="ltr">
-            <div class="tp-banner-container c-arrow-dark">
-                <div class="tp-banner rev_slider" data-version="5.0">
-                    <ul>
-                        <!--BEGIN: SLIDE #1 -->
-                        <li class="c-bg-white" data-transition="fade" data-slotamount="2" data-masterspeed="1000">
-                            <img src="#" alt=""
-                                data-lazyload="assets/base/img/layout/sliders/revo-slider/base/blank.png">
-                            <!--BEGIN: MAIN TITLE -->
-                            <div class="tp-caption sft tp-resizeme customin customout start" data-x="center"
-                                data-y="top" data-voffset="40" data-speed="600" data-start="1000"
-                                data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:600;e:Back.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:500;e:Back.easeInOut;"
-                                data-splitin="none" data-splitout="none" data-elementdelay="0.1"
-                                data-endelementdelay="0.1" data-endspeed="600">
-                                <h3 class="c-font-42 c-font-center c-font-dark c-font-sbold c-font-uppercase c-reset">
-                                    Welcome To My HomePage
-                                </h3>
-                            </div>
-                            <!--END -->
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-1 glass-panel px-4 py-2 rounded-full border border-white/10 shadow-2xl">
+        <a href="#home" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Home</a>
+        <a href="#about" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">About</a>
+        <a href="#skills" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Architecture</a>
+        <a href="#portfolio" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Portfolio</a>
+        <a href="#experience" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Experience</a>
+        <a href="#terminal" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Terminal</a>
+        <a href="#contact" class="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-300 transition-colors">Contact</a>
+      </nav>
 
-                            <!--BEGIN: MAIN DEVICE -->
-                            <div class="tp-caption lfb customin customout tp-resizeme" data-x="center" data-y="bottom"
-                                data-speed="600" data-start="500" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:600;e:Back.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:700;e:Back.easeInOut;"
-                                data-splitin="none" data-splitout="none" data-elementdelay="0.1"
-                                data-endelementdelay="0.1" data-endspeed="600" style="z-index: 5;">
-                                <img src="#" alt="" data-lazyload="assets/base/img/layout/sliders/mac-slider.png">
-                            </div>
-                            <!--END -->
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Audio Synth Toggle -->
+        <button id="audio-toggle" class="audio-toggle-btn glass-panel px-3 py-2 rounded-xl border border-white/10 hover:border-cyan-500/40 flex items-center gap-2 cursor-pointer transition-all" title="Toggle 3D Audio FX">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+          <span class="text-xs text-cyan-300 font-mono hidden sm:inline">AUDIO ON</span>
+        </button>
 
-                            <!--BEGIN: BEAN 1 -->
-                            <div class="tp-caption lfl customout tp-resizeme" data-x="center" data-hoffset="-245"
-                                data-y="bottom" data-voffset="245" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-speed="300" data-start="1500" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <img src="#" alt=""
-                                    data-lazyload="assets/base/img/layout/sliders/revo-slider/slider-11/beam1.png">
-                            </div>
-                            <div class="tp-caption lfl customout tp-resizeme" data-x="center" data-hoffset="-380"
-                                data-y="bottom" data-voffset="255" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:400;e:Power3.easeInOut;"
-                                data-speed="300" data-start="1500" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <h3 class="c-font-uppercase c-font-15 c-font-sbold c-theme-font c-reset c-font-right ">
-                                    System Administrator
-                                </h3>
-                                <p class="c-font-15 c-margin-t-8 c-font-right ">
-                                    Windows, Linux,
-                                    Cloud Based
-                                </p>
-                            </div>
-                            <!--END -->
+        <!-- CTA Direct Contact -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all transform hover:-translate-y-0.5">
+          <span>Let's Talk</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
 
-                            <!--BEGIN: BEAN 2 -->
-                            <div class="tp-caption lfl customout tp-resizeme" data-x="center" data-hoffset="-280"
-                                data-y="bottom" data-voffset="115" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:400;e:Power3.easeInOut;"
-                                data-speed="300" data-start="2100" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <img src="#" alt=""
-                                    data-lazyload="assets/base/img/layout/sliders/revo-slider/slider-11/beam2.png">
-                            </div>
-                            <div class="tp-caption lft customout tp-resizeme" data-x="center" data-hoffset="-410"
-                                data-y="bottom" data-voffset="65" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:400;e:Power3.easeInOut;"
-                                data-speed="300" data-start="2100" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <h3 class="c-font-uppercase c-font-15 c-font-sbold c-theme-font c-reset c-font-right ">
-                                    Network Administrator
-                                </h3>
-                                <p class="c-font-15 c-margin-t-8 c-font-right ">
-                                    LAN & WAN, Network Routers, <br>UTM Devices, Wifi Appliances
-                                </p>
-                            </div>
-                            <!--END -->
-
-                            <!--BEGIN: BEAN 3 -->
-                            <div class="tp-caption lfr customout tp-resizeme" data-x="center" data-hoffset="260"
-                                data-y="bottom" data-voffset="320" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:500;e:Power3.easeInOut;"
-                                data-speed="300" data-start="1800" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <img src="#" alt=""
-                                    data-lazyload="assets/base/img/layout/sliders/revo-slider/slider-11/beam3.png">
-                            </div>
-                            <div class="tp-caption lfr customout tp-resizeme" data-x="center" data-hoffset="400"
-                                data-y="bottom" data-voffset="295" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-speed="300" data-start="1800" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <h3 class="c-font-uppercase c-font-15 c-font-sbold c-theme-font c-reset c-font-left ">
-                                    Front-End Developer
-                                </h3>
-                                <p class="c-font-15 c-margin-t-8 c-font-left ">
-                                    HTML5, CSS3, Javascript
-                                </p>
-                            </div>
-                            <!--END -->
-
-                            <!--BEGIN: BEAN 4 -->
-                            <div class="tp-caption lfr customout tp-resizeme" data-x="center" data-hoffset="280"
-                                data-y="bottom" data-voffset="65" data-basealign="slide" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-speed="300" data-start="2400" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <img src="#" alt=""
-                                    data-lazyload="assets/base/img/layout/sliders/revo-slider/slider-11/beam4.png">
-                            </div>
-                            <div class="tp-caption lfr customout tp-resizeme" data-x="center" data-hoffset="413"
-                                data-y="bottom" data-voffset="112" data-transform_idle="o:1;"
-                                data-transform_in="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:300;e:Power3.easeInOut;"
-                                data-transform_out="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;s:500;e:Power3.easeInOut;"
-                                data-speed="300" data-start="2400" data-elementdelay="0.1" data-endelementdelay="0.1"
-                                style="z-index: 2;">
-                                <h3 class="c-font-uppercase c-font-15 c-font-sbold c-theme-font c-reset c-font-left ">
-                                    Back-End Developer
-                                </h3>
-                                <p class="c-font-15 c-margin-t-8 c-font-left ">
-                                    PHP, Laravel, CI4 Framework, Jquery, <br>
-                                    Mysql, MariaDB, SQL Databases
-                                </p>
-                            </div>
-                            <!--END -->
-                        </li>
-                        <!--END -->
-                    </ul>
-                </div>
-            </div>
-        </section><!-- END: LAYOUT/SLIDERS/REVO-SLIDER-5 -->
-
-        <section id="features">
-            <!-- BEGIN: CONTENT/MISC/WHY-CHOOSE-US-1 -->
-            <div class="c-content-box c-size-lg c-bg-grey-1">
-                <div class="container">
-                    <div class="c-progress-bar">
-                        <!-- <h4 class="c-progress-bar-title c-center">Line Progress Bar</h4> -->
-                        <div class="row">
-
-                            <div class="col-sm-6 wow animate fadeInLeft"
-                                style="visibility: visible; animation-name: fadeInLeft; opacity: 1;">
-                                <!-- Begin: Title 1 component -->
-                                <div class="c-content-title-1">
-                                    <h3 class="c-font-uppercase c-font-bold">About Me</h3>
-                                    <div class="c-line-left c-theme-bg"></div>
-                                </div>
-                                <!-- End-->
-                                <p>
-                                    I'm Dwi Hardianto, i was born in Palembang, 24th January 1993.
-                                    I love IT stuffs since the 3rd grade of Elementary School.
-                                    My first computer learning was LOTUS123 on windows98 and my first games is chess :)
-                                    <br>Almost every day i went to Internet Cafe to play games, and became the most pro
-                                    player among friends.
-                                    While in college, i had my first job as IT administrator in that internet cafe.
-                                    Since then, i have continued to learn IT knowledge and skills until now.
-                                    I never stop to learn, always interest to any newest technology.<br>
-                                    That's why, from IT administrator, network administrator, system administrator, then
-                                    programming, I am self-taught through various experiences.
-                                </p>
-                            </div>
-
-                            <div class="col-sm-6 wow animate fadeInRight"
-                                style="visibility: visible; animation-name: fadeInRight; opacity: 1;">
-                                <div class="c-content-tab-4 c-opt-3" role="tabpanel">
-                                    <ul class="nav nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab-31" role="tab" data-toggle="tab" class="c-font-16">Major
-                                                Skills</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab-32" role="tab" data-toggle="tab" class="c-font-16">System
-                                                Administrators</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab-33" role="tab" data-toggle="tab"
-                                                class="c-font-16">Networking</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab-34" role="tab" data-toggle="tab" class="c-font-16">Software
-                                                Engineers</a>
-                                        </li>
-
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="tab-31">
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-red c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.95" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Computer & Internet Advanced
-                                                        Literacy</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-purple-3 c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.90" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">IT Troubleshooting Skills
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-green c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.8" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Expert "Googling" Skills
-                                                        (Problem
-                                                        Solving)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab-32">
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-red c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.8" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Windows Server (Active
-                                                        Directory, DHCP, DNS, DFS, Azure Sync, SSO)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-blue c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.75" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Linux Server (Debian,
-                                                        Ubuntu)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-purple-3 c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.74" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Virtual Machine (Hyper-V, VMWare
-                                                        Esx) </label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-green c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.65" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Cloud Based (Azure, Google
-                                                        Cloud, AWS)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-yellow c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.85" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">SaaS (Office365, Dynamic
-                                                        Business Central 365)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab-33">
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-red c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.78" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Router Devices (Mikrotik,
-                                                        Cisco)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-purple-3 c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.85" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">UTM Devices (Fortigate, Sophos
-                                                        UTM)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-green c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.85" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">LAN & WAN Configuration (MPLS,
-                                                        VPN Site-to-Site, Routing)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-blue c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.77" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Wifi Appliances (Aruba,
-                                                        Unifi)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab-34">
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-red c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.78" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">PHP Programming (Native,
-                                                        Codeigniter 4, Laravel)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-purple-3 c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.75" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Databases (Mysql, MariaDB,
-                                                        MSSQL)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-green c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.75" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Front-End (HTML5, CSS3,
-                                                        Javascript)</label>
-                                                </div>
-                                            </div>
-                                            <div class="c-progress-bar-container">
-                                                <div class="c-progress-bar-line c-border-blue c-font-dark"
-                                                    data-progress-bar="line" data-stroke-width="1" data-duration="1500"
-                                                    data-trail-width="1" data-progress="0.77" data-display-value="true"
-                                                    data-animation="bounce">
-                                                    <label class="c-progress-bar-label">Others (Javascript, Ajax Jquery,
-                                                        JSON, REST API)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="clients">
-            <!-- BEGIN: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
-            <div class="c-content-box c-size-lg c-bg-white">
-                <div class="container">
-                    <!-- Begin: testimonials 1 component -->
-                    <div class="c-content-testimonials-1 c-option-2 wow animated fadeIn" data-slider="owl">
-                        <!-- Begin: Title 1 component -->
-                        <div class="c-content-title-1">
-                            <h3 class="c-center c-font-uppercase c-font-bold">Experiences</h3>
-                            <div class="c-line-center c-theme-bg"></div>
-                            <p class="c-center c-font-uppercase1">12 Years Working Experiences as an IT</p>
-                        </div>
-                        <!-- End-->
-
-                        <!-- Begin: Owlcarousel -->
-
-                        <div class="owl-carousel owl-theme c-theme c-owl-nav-center wow animated fadeInUp"
-                            data-single-item="true" data-slide-speed="8000" data-rtl="false">
-                            <div class="item">
-                                <div class="c-testimonial">
-                                    <p>
-                                        IT Chief at PT Aneka Bumi Pratama, part of ITOCHU Group.
-                                        System Administrator Specialist for Infrastructure and virtualization
-                                        -Handling Server and Virtualization (Hyper-V)
-                                        -Build and Manage Active Directory
-                                        -Handling Microsoft Office365, build the system integration
-                                        -Sharepoint and Onedrive operation support
-                                        -DFS Management
-                                        -Backup & Restore Operational Databases
-                                        -Hybrid Operation of Local Data & Cloud
-                                        -Improve IT Environment
-
-                                        Network Operation and Control
-                                        -Handling Mikrotik Router, and other network devices. (Unifi, etc)
-                                        -Build, Monitor, and Manage Integration Network between Branches.
-                                        -Improve scalability and failover network environment.
-                                        -Traffic and Bandwidth Management
-
-                                        Web Programming
-                                        - Build on HTML PHP / Codeigniter, javascript, jquery, Mysql
-                                        - Front End & Back End development
-
-                                        Management of User Issues
-                                        - Troubleshoot any IT problem.
-                                    </p>
-                                    <h3>
-                                        <span class="c-name c-theme">PT Aneka Bumi Pratama</span>, IT Chief (2018 -
-                                        Present)
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="c-testimonial">
-                                    <p>
-                                        IT System Administrator Specialist for Infrastructure and virtualizations
-                                        -System and Network Engineer
-                                        -Windows Server Knowledge, Manage Active Directory, DNS, and other.
-                                        -Microsoft Office365 operation support
-                                        -Expert Troubleshooting Skill
-                                    </p>
-                                    <h3>
-                                        <span class="c-name c-theme">PT Mitra Integrasi Informatika</span>,
-                                        Senior System Administrator and Operation Support (2018 - 2019)
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="c-testimonial">
-                                    <p>
-                                        Work as IT System Administrator for Infrastructure
-                                        -System and Network Monitoring with a few tools experience like ManageEngine,
-                                        Solarwind, Microsoft System Center, etc.
-                                        -Build and Manage Server and Virtual Machines.
-                                        -Handling Citrix Xen Server, Hyper-V, and VMware vSphere.
-                                        -Manage and Configure Cisco Router, Citrix Netscaler, Sophos Firewall XG, Aruba,
-                                        etc.
-                                        -Windows Server Knowledge, Manage Active Directory, DNS, and other.
-                                        -Linux Intermediate skill knowledge. (Debian, Ubuntu, etc)
-                                        -And Troubleshoot more IT problem.
-                                    </p>
-                                    <h3>
-                                        <span class="c-name c-theme">PT Mitsui Leasing Capital Indonesia</span>, IT
-                                        System Administrator (2015 - 2018)
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="c-testimonial">
-                                    <p>
-                                        Work as a Helpdesk, IT Support, Network Administrator, CCTV Admin, Web and
-                                        advertising Promotion.
-                                    </p>
-                                    <h3>
-                                        <span class="c-name c-theme">PT Rezki Curah Prima</span>, IT Support Officer
-                                        (2014 - 2015)
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="c-testimonial">
-                                    <p>
-                                        Admin support and Network Administrator
-                                        - Handling Mikrotik Router Environment
-                                    </p>
-                                    <h3>
-                                        <span class="c-name c-theme">Platinum Internet Cafe</span>, IT Admin (2010 -
-                                        2014)
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End-->
-                    </div>
-                    <!-- End-->
-                </div>
-            </div><!-- END: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
-        </section>
-
-        <section id="demos">
-            <!-- BEGIN: CONTENT/PORTFOLIO/LATEST-WORKS-1 -->
-            <div class="c-content-box c-size-md c-bg-grey-1">
-                <div class="container">
-                    <div class="c-content-title-1">
-                        <h3 class="c-center c-font-uppercase c-font-bold">Latest Portfolio</h3>
-                        <div class="c-line-center c-theme-bg"></div>
-                        <p class="c-center c-font-uppercase">All the projects that i made by myself "alone"</p>
-                    </div>
-
-                    <div class="cbp-panel">
-                        <!-- SEE: components.js:ContentCubeLatestPortfolio -->
-                        <div class="c-content-latest-works cbp cbp-l-grid-masonry-projects wow animate fadeInLeft">
-                            <div class="cbp-item graphic">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/08-long.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project1.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/08.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="Dashboard<br>by Paul Flavius Nechita">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item web-design logos wow animate fadeInLeft">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/07.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project2.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/07.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="World Clock Widget<br>by Paul Flavius Nechita">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item graphic logos wow animate fadeInLeft" data-wow-delay="0.2s">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/09.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project3.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="http://vimeo.com/14912890"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="To-Do Dashboard<br>by Tiberiu Neamu">view video</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item identity web-design wow animate fadeInLeft" data-wow-delay="0.4s">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/014.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project4.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/014.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="WhereTO App<br>by Tiberiu Neamu">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item web-design graphic wow animate fadeInLeft">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/34.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project5.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/34.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="Events and  More<br>by Tiberiu Neamu">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item identity web-design wow animate fadeInLeft" data-wow-delay="0.2s">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/53.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project6.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/53.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="Ski * Buddy<br>by Tiberiu Neamu">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-item graphic logos wow animate fadeInLeft" data-wow-delay="0.4s">
-                                <div class="cbp-caption">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="assets/base/img/content/stock/39.jpg" alt="">
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="c-masonry-border"></div>
-                                        <div class="cbp-l-caption-alignCenter">
-                                            <div class="cbp-l-caption-body">
-                                                <a href="ajax/projects/project7.html"
-                                                    class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
-                                                <a href="assets/base/img/content/stock/39.jpg"
-                                                    class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase"
-                                                    data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">zoom</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END: CONTENT/PORTFOLIO/LATEST-WORKS-1 -->
-        </section>
-
-        <section id="contact">
-            <footer class="c-layout-footer c-layout-footer-1">
-                <div class="c-prefooter">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="c-logo" style="padding-bottom:0px">
-                                    <h1 class="c-font-white">CONTACT</h1>
-                                </div>
-                                <p class="c-contact">
-                                    Palembang, Indonesia<br>
-                                    email : dwihardianto13@gmail.com <br>
-                                    Phone : +62 813-6833-7015<br>
-                                    IG : dwi.hardianto<br>
-                                    FB : dwi.hardianto<br>
-                                    LinkedIn : https://www.linkedin.com/in/dwi-hardianto-299045104/
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="c-feedback">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="c-postfooter">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <p class="c-copyright c-font-white">2022 &copy; DwiHardianto - Platform by Github.Io
-                                    <span class="c-font-grey-3"> All Rights Reserved.</span>
-                                </p>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <ul class="c-socials">
-                                    <li><a href="#"><i class="icon-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-youtube"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-dribbble"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </section>
-        <!-- END: PAGE CONTENT -->
-
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden glass-panel p-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white" aria-label="Toggle menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
     </div>
-    <!-- END: PAGE CONTAINER -->
 
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-3 p-4 glass-panel rounded-2xl border border-white/10 shadow-2xl flex flex-col gap-2">
+      <a href="#home" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">Home</a>
+      <a href="#about" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">About & Philosophy</a>
+      <a href="#skills" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">Architecture & Skills</a>
+      <a href="#portfolio" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">Enterprise Portfolio</a>
+      <a href="#experience" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">Experience Timeline</a>
+      <a href="#terminal" class="px-3 py-2 text-sm text-slate-200 hover:bg-white/5 rounded-lg">Interactive Terminal</a>
+      <a href="#contact" class="px-3 py-2 text-sm text-cyan-400 font-semibold hover:bg-white/5 rounded-lg">Get In Touch</a>
+    </div>
+  </header>
 
-    <!-- BEGIN: LAYOUT/FOOTERS/GO2TOP -->
-    <div class="c-layout-go2top">
-        <i class="icon-arrow-up"></i>
-    </div><!-- END: LAYOUT/FOOTERS/GO2TOP -->
+  <!-- ===================================================================
+       HERO SECTION WITH 3D INTERACTION
+       =================================================================== -->
+  <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-8 overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Executive Bio & Hero Text -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Live Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+          <span class="status-beacon">
+            <span class="beacon-ping"></span>
+            <span class="beacon-dot"></span>
+          </span>
+          <span class="text-xs font-mono font-medium text-cyan-300">IT CHIEF &bull; PRINCIPAL ARCHITECT &bull; 14+ YEARS</span>
+        </div>
 
-    <!-- BEGIN: LAYOUT/BASE/BOTTOM -->
-    <!-- BEGIN: CORE PLUGINS -->
-    <!--[if lt IE 9]>
-	<script src="assets/global/plugins/excanvas.min.js"></script> 
-	<![endif]-->
-    <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/jquery.easing.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/reveal-animate/wow.js" type="text/javascript"></script>
-    <script src="assets/demos/default/js/scripts/reveal-animate/reveal-animate.js" type="text/javascript"></script>
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight">
+          Architecting <span class="gradient-text-cyan">Resilient Enterprise Systems</span> & High-Scale Digital Products.
+        </h1>
 
-    <!-- END: CORE PLUGINS -->
+        <!-- Subtitle & Role Description -->
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+          I am <strong class="text-white font-semibold">Dwi Hardianto</strong> — IT Chief at <span class="text-cyan-300 font-medium">PT Aneka Bumi Pratama (ITOCHU Group)</span> and Founder of <span class="text-violet-300 font-medium">Bedulur Teknologi Indonesia</span>. Unifying cloud infrastructure, zero-trust network security, high-throughput backend microservices, and offline-first mobile applications into mission-critical production platforms.
+        </p>
 
-    <!-- BEGIN: LAYOUT PLUGINS -->
-    <script src="assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.slideanims.min.js"
-        type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.layeranimation.min.js"
-        type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.navigation.min.js"
-        type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.video.min.js"
-        type="text/javascript"></script>
-    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.parallax.min.js"
-        type="text/javascript"></script>
-    <script src="assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-    <script src="assets/plugins/smooth-scroll/jquery.smooth-scroll.js" type="text/javascript"></script>
-    <script src="assets/plugins/typed/typed.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/slider-for-bootstrap/js/bootstrap-slider.js" type="text/javascript"></script>
-    <script src="assets/plugins/js-cookie/js.cookie.js" type="text/javascript"></script>
-    <!-- END: LAYOUT PLUGINS -->
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#portfolio" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex items-center gap-2">
+            <span>Explore Enterprise Portfolio</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
 
-    <!-- BEGIN: THEME SCRIPTS -->
-    <script src="assets/base/js/components.js" type="text/javascript"></script>
-    <script src="assets/base/js/components-shop.js" type="text/javascript"></script>
-    <script src="assets/base/js/app.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-            App.init(); // init core    
-        });
-    </script>
-    <!-- END: THEME SCRIPTS -->
+          <a href="#terminal" class="px-5 py-3.5 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-white text-sm font-mono flex items-center gap-2 hover:bg-white/5 transition-all">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>Launch CLI Terminal</span>
+          </a>
+        </div>
 
-    <!-- BEGIN: PAGE SCRIPTS -->
-    <script src="assets/demos/default/js/scripts/revo-slider/slider-5.js" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLPWnOu970nrxAY1eApfQb0UKBaxov3zg"
-        type="text/javascript"></script>
-    <script src="assets/plugins/gmaps/gmaps.js" type="text/javascript"></script>
-    <script src="assets/demos/default/js/scripts/pages/contact.js" type="text/javascript"></script>
-    <script src="assets/plugins/progress-bar/progressbar.js" type="text/javascript"></script>
-    <!-- END: PAGE SCRIPTS -->
-    <!-- END: LAYOUT/BASE/BOTTOM -->
+        <!-- Tech Stack Ticker -->
+        <div class="pt-6 border-t border-white/10">
+          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-3">Core Production Tech Stack</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">Laravel 12/13</span>
+            <span class="tech-pill">Flutter / Dart</span>
+            <span class="tech-pill">PostGIS & PostgreSQL</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">Docker & Hyper-V</span>
+            <span class="tech-pill">Mikrotik & Fortigate</span>
+            <span class="tech-pill">Windows Server AD</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive 3D Canvas Focal & Holographic Profile Card -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        
+        <!-- Hologram Profile Card -->
+        <div class="relative w-full max-w-sm glass-card rounded-3xl p-6 border border-white/10 shadow-2xl backdrop-blur-2xl animate-float-slow">
+          
+          <!-- Top Cyber Badge -->
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-mono text-cyan-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              CORE BIO-ID: DH-1993
+            </span>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-violet-500/20 text-violet-300 border border-violet-500/30">
+              PALEMBANG, ID
+            </span>
+          </div>
+
+          <!-- Profile Photo with Cyber Ring -->
+          <div class="relative w-40 h-40 mx-auto mb-5 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-500 via-indigo-500 to-violet-500 shadow-xl shadow-cyan-500/20">
+            <img src="assets/images/profile/dwihardianto.jpg" alt="Dwi Hardianto" class="w-full h-full object-cover rounded-xl" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Name & Current Position -->
+          <div class="text-center mb-5">
+            <h3 class="text-2xl font-bold font-heading text-white">Dwi Hardianto</h3>
+            <p class="text-xs font-mono text-cyan-400 mt-1">Chief Information Technology Officer</p>
+            <p class="text-xs text-slate-400 mt-0.5">PT Aneka Bumi Pratama &bull; ITOCHU Group</p>
+          </div>
+
+          <!-- Live Metrics Mini-Grid -->
+          <div class="grid grid-cols-2 gap-2 pt-4 border-t border-white/10 text-center font-mono">
+            <div class="p-2.5 rounded-xl bg-white/[0.02] border border-white/5">
+              <div class="text-base font-bold text-cyan-400">14+ YRS</div>
+              <div class="text-[10px] text-slate-400">Total Experience</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-white/[0.02] border border-white/5">
+              <div class="text-base font-bold text-violet-400">99.98%</div>
+              <div class="text-[10px] text-slate-400">Uptime Record</div>
+            </div>
+          </div>
+
+          <!-- Bottom Micro Status -->
+          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <span>NETWORK STATUS:</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              ALL SYSTEMS ONLINE
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       METRICS & VALUE PROPOSITION TICKER
+       =================================================================== -->
+  <section class="py-12 border-y border-white/5 bg-slate-950/40 backdrop-blur-md relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-cyan">14+ Years</div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Full-Spectrum IT & Engineering Journey</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-violet">25+ Systems</div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Enterprise Web, Mobile & IoT Deployed</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400">99.98%</div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">High Availability & Infrastructure SLA</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-gold">100K+ Data</div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Spatial Telemetry & Records Processed</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       ABOUT & ARCHITECTURE PHILOSOPHY
+       =================================================================== -->
+  <section id="about" class="py-24 px-4 sm:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto space-y-16">
+      
+      <!-- Section Title -->
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
+          <span class="w-2 h-2 rounded bg-cyan-400"></span>
+          Executive Profile & Philosophy
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          From Lotus 1-2-3 Enthusiast to <span class="gradient-text-cyan">Enterprise Systems Chief</span>.
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          My passion started in 3rd grade elementary school learning LOTUS 1-2-3 on Windows 98. From managing LAN cyber cafes during college to leading mission-critical IT infrastructure for global enterprises, I have evolved through every layer of the computing stack.
+        </p>
+      </div>
+
+      <!-- Core Architectural Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4 hover:border-cyan-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">High Availability & DR</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Architecting fault-tolerant failovers, hybrid on-premise cloud bridges, Hyper-V virtualization, and zero-downtime database replication.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4 hover:border-violet-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Zero-Trust Security</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Fortigate UTM, Sophos XG, Active Directory SSO, Site-to-Site IPsec VPN, and granular role-based cryptographic access control.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4 hover:border-emerald-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Spatial GIS & AI Logic</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            PostGIS spatial geofencing, 3km outbreak risk buffer modeling, automated rule engines, and algorithmic decision matrices.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Offline-First Mobility</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Cross-platform Flutter applications engineered for harsh field conditions with local SQLite persistence and conflict-free data sync.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CORE COMPETENCIES & ARCHITECTURE MATRIX
+       =================================================================== -->
+  <section id="skills" class="py-24 px-4 sm:px-8 bg-slate-950/60 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto space-y-16">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Technical Mastery Matrix</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Comprehensive <span class="gradient-text-cyan">Full-Stack Capabilities</span>
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Deep, battle-tested expertise across four key pillars of modern technology operations.
+        </p>
+      </div>
+
+      <!-- Skills 4-Column Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: Backend & Cloud -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">01</div>
+            <div>
+              <h3 class="text-base font-bold text-white font-heading">Backend & Cloud</h3>
+              <span class="text-[11px] font-mono text-slate-400">APIs & Microservices</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>NestJS & TypeScript</span>
+                <span class="font-mono text-cyan-400">92%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[92%] h-full bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Laravel & Modern PHP</span>
+                <span class="font-mono text-cyan-400">95%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[95%] h-full bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Docker & Containers</span>
+                <span class="font-mono text-cyan-400">88%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[88%] h-full bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>AWS & Azure Hybrid</span>
+                <span class="font-mono text-cyan-400">85%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[85%] h-full bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Databases & GIS -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center font-bold">02</div>
+            <div>
+              <h3 class="text-base font-bold text-white font-heading">Data & Spatial GIS</h3>
+              <span class="text-[11px] font-mono text-slate-400">Persistence & Geometry</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>PostGIS & Spatial SQL</span>
+                <span class="font-mono text-violet-400">90%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[90%] h-full bg-violet-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>PostgreSQL & MariaDB</span>
+                <span class="font-mono text-violet-400">94%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[94%] h-full bg-violet-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Redis In-Memory Caching</span>
+                <span class="font-mono text-violet-400">88%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[88%] h-full bg-violet-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>MS SQL Server & Oracle</span>
+                <span class="font-mono text-violet-400">86%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[86%] h-full bg-violet-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Mobile & Frontend -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">03</div>
+            <div>
+              <h3 class="text-base font-bold text-white font-heading">Mobile & Web UI</h3>
+              <span class="text-[11px] font-mono text-slate-400">Cross-Platform Apps</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Flutter & Dart</span>
+                <span class="font-mono text-emerald-400">92%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[92%] h-full bg-emerald-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>React & Next.js</span>
+                <span class="font-mono text-emerald-400">89%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[89%] h-full bg-emerald-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Tailwind CSS & Modern UI</span>
+                <span class="font-mono text-emerald-400">96%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[96%] h-full bg-emerald-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Three.js & 3D WebGL</span>
+                <span class="font-mono text-emerald-400">84%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[84%] h-full bg-emerald-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Network & Infrastructure -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">04</div>
+            <div>
+              <h3 class="text-base font-bold text-white font-heading">Network & Infra</h3>
+              <span class="text-[11px] font-mono text-slate-400">Security & Systems</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Windows Server (AD, DNS, DFS)</span>
+                <span class="font-mono text-amber-400">96%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[96%] h-full bg-amber-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Mikrotik, Cisco & Routing</span>
+                <span class="font-mono text-amber-400">94%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[94%] h-full bg-amber-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Fortigate & Sophos UTM</span>
+                <span class="font-mono text-amber-400">92%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[92%] h-full bg-amber-400 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Hyper-V & VMware ESXi</span>
+                <span class="font-mono text-amber-400">93%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[93%] h-full bg-amber-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FLAGSHIP ENTERPRISE PORTFOLIO SHOWCASE
+       =================================================================== -->
+  <section id="portfolio" class="py-24 px-4 sm:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto space-y-12">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+        <div class="space-y-3 max-w-2xl">
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
+            <span class="w-2 h-2 rounded bg-cyan-400"></span>
+            Verified Production Portfolio
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Flagship Systems & <span class="gradient-text-cyan">Enterprise Deployments</span>
+          </h2>
+          <p class="text-slate-300 text-sm">
+            Interactive showcase of large-scale GIS platforms, ERP systems, fintech payment gateways, and mobile applications built and deployed to production.
+          </p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-tab active px-4 py-2 rounded-xl text-xs font-mono font-medium border border-white/10 text-slate-300 hover:text-white" data-filter="all">
+            All (9)
+          </button>
+          <button class="filter-tab px-4 py-2 rounded-xl text-xs font-mono font-medium border border-white/10 text-slate-300 hover:text-white" data-filter="enterprise">
+            Enterprise & GIS
+          </button>
+          <button class="filter-tab px-4 py-2 rounded-xl text-xs font-mono font-medium border border-white/10 text-slate-300 hover:text-white" data-filter="mobile">
+            Mobile & Audio
+          </button>
+          <button class="filter-tab px-4 py-2 rounded-xl text-xs font-mono font-medium border border-white/10 text-slate-300 hover:text-white" data-filter="fintech">
+            Fintech & Core
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid Container (Dynamic via JS) -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered by assets/js/main.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CAREER TRAJECTORY & EXPERIENCE TIMELINE
+       =================================================================== -->
+  <section id="experience" class="py-24 px-4 sm:px-8 bg-slate-950/60 relative z-10 border-t border-white/5">
+    <div class="max-w-5xl mx-auto space-y-16">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Chronological Milestones</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          14+ Years of <span class="gradient-text-cyan">Professional Leadership</span>
+        </h2>
+        <p class="text-slate-400 text-sm">
+          A proven history of reliable infrastructure delivery, team leadership, and digital transformation.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative border-l border-cyan-500/20 ml-4 sm:ml-8 space-y-12">
+        
+        <!-- Job 1 -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 class="text-lg font-bold text-white font-heading">
+                IT Chief <span class="text-cyan-400">&bull; PT Aneka Bumi Pratama</span>
+              </h3>
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 w-fit">2018 - PRESENT (ITOCHU Group)</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Spearheading comprehensive IT infrastructure, system virtualization, and custom software engineering. Architected hybrid cloud integration (Active Directory & Microsoft 365), high-availability Hyper-V virtualization, branch-to-branch WAN connectivity, Mikrotik/Fortigate security routers, and enterprise web applications.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-pill">Hyper-V</span>
+              <span class="tech-pill">Active Directory</span>
+              <span class="tech-pill">Office 365 Hybrid</span>
+              <span class="tech-pill">Mikrotik</span>
+              <span class="tech-pill">PHP / Laravel</span>
+              <span class="tech-pill">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-violet-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 class="text-lg font-bold text-white font-heading">
+                Senior System Administrator <span class="text-violet-400">&bull; PT Mitra Integrasi Informatika</span>
+              </h3>
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20 w-fit">2018 - 2019</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Delivered enterprise infrastructure operations and specialized system engineering for enterprise tier clients. Managed Active Directory domains, Microsoft Exchange/O365 configurations, high-complexity system diagnostics, and emergency disaster recovery protocols.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-pill">Windows Server</span>
+              <span class="tech-pill">Exchange / O365</span>
+              <span class="tech-pill">Tier 3 Support</span>
+              <span class="tech-pill">System Troubleshooting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-blue-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 class="text-lg font-bold text-white font-heading">
+                IT System Administrator <span class="text-blue-400">&bull; PT Mitsui Leasing Capital Indonesia</span>
+              </h3>
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20 w-fit">2015 - 2018</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Managed financial enterprise infrastructure across multiple physical branch offices. Administered Citrix XenServer, VMware vSphere, Cisco Core Routers, Citrix Netscaler load balancers, Sophos XG firewalls, and SolarWinds/ManageEngine enterprise monitoring systems.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-pill">Citrix XenServer</span>
+              <span class="tech-pill">VMware vSphere</span>
+              <span class="tech-pill">Cisco Routers</span>
+              <span class="tech-pill">Sophos XG</span>
+              <span class="tech-pill">SolarWinds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-slate-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 class="text-lg font-bold text-white font-heading">
+                IT Support Officer <span class="text-slate-400">&bull; PT Rezki Curah Prima</span>
+              </h3>
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-500/10 text-slate-300 border border-slate-500/20 w-fit">2014 - 2015</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Managed on-premise workstation networks, CCTV IP surveillance, web operations, and peripheral hardware support.
+            </p>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-emerald-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 class="text-lg font-bold text-white font-heading">
+                Network & Systems Admin <span class="text-emerald-400">&bull; Platinum Cyber Cafe</span>
+              </h3>
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 w-fit">2010 - 2014</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Hands-on origin managing high-traffic LAN gaming networks, Mikrotik bandwidth queue tree shaping, diskless boot servers, and hardware overclocking.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       INTERACTIVE CYBER TERMINAL HUD
+       =================================================================== -->
+  <section id="terminal" class="py-24 px-4 sm:px-8 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-2">
+          <span class="w-2 h-2 rounded bg-cyan-400"></span>
+          Live System Console
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Interactive <span class="gradient-text-cyan">Architect Terminal</span>
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Inspect credentials, system telemetry, and architectural blueprints directly via CLI commands.
+        </p>
+      </div>
+
+      <!-- Terminal Window Box -->
+      <div class="terminal-window p-0 overflow-hidden shadow-2xl">
+        
+        <!-- Window Title Bar -->
+        <div class="terminal-header px-4 py-3 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-xs font-mono text-slate-400 ml-2">dwi-architect@console: ~ (zsh)</span>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] font-mono text-cyan-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+            CONNECTED 127.0.0.1
+          </div>
+        </div>
+
+        <!-- Terminal Output Area -->
+        <div id="terminal-output" class="p-6 h-64 sm:h-72 overflow-y-auto space-y-2 text-xs font-mono text-slate-300">
+          <div class="text-cyan-400">Dwi Hardianto Architecture Console [Version 4.2.0-LTS]</div>
+          <div class="text-slate-400">Type <span class="text-cyan-300 font-bold">'help'</span> for instructions or click any quick command below.</div>
+          <div class="pt-2 text-emerald-400">&#10004; All enterprise telemetry clusters active. Ready for input.</div>
+        </div>
+
+        <!-- Quick Action Chips -->
+        <div class="px-6 py-2.5 bg-slate-900/50 border-t border-white/5 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="text-slate-500 self-center text-[11px]">Quick:</span>
+          <button onclick="document.getElementById('terminal-input').value='whoami'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-cyan-500/20 text-cyan-300 hover:border-cyan-500/40 border border-white/10 transition">whoami</button>
+          <button onclick="document.getElementById('terminal-input').value='skills'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-cyan-500/20 text-cyan-300 hover:border-cyan-500/40 border border-white/10 transition">skills</button>
+          <button onclick="document.getElementById('terminal-input').value='projects'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-cyan-500/20 text-cyan-300 hover:border-cyan-500/40 border border-white/10 transition">projects</button>
+          <button onclick="document.getElementById('terminal-input').value='exp'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-cyan-500/20 text-cyan-300 hover:border-cyan-500/40 border border-white/10 transition">exp</button>
+          <button onclick="document.getElementById('terminal-input').value='contact'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-cyan-500/20 text-cyan-300 hover:border-cyan-500/40 border border-white/10 transition">contact</button>
+          <button onclick="document.getElementById('terminal-input').value='clear'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2.5 py-1 rounded bg-white/5 hover:bg-rose-500/20 text-rose-300 hover:border-rose-500/40 border border-white/10 transition">clear</button>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <div class="px-6 py-3.5 bg-slate-950 border-t border-white/10 flex items-center gap-2">
+          <span class="text-cyan-400 font-mono text-xs">guest@dwi-architect:~$</span>
+          <input type="text" id="terminal-input" placeholder="Type 'help' or command here and press Enter..." class="w-full bg-transparent border-none outline-none font-mono text-xs text-white placeholder-slate-600 focus:ring-0" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CONTACT & COLLABORATION
+       =================================================================== -->
+  <section id="contact" class="py-24 px-4 sm:px-8 bg-slate-950/80 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto space-y-16">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-2">
+          <span class="w-2 h-2 rounded bg-cyan-400"></span>
+          Direct Communication Channels
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Let's Build Something <span class="gradient-text-cyan">Remarkable</span>
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Available for principal systems architecture consulting, enterprise digital transformation, or specialized tech advisory.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Coordinates Card -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-6">
+            <h3 class="text-lg font-bold text-white font-heading">Direct Coordinates</h3>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="text-xs font-mono text-slate-400 block">EMAIL ADDRESS</span>
+                <a href="mailto:dwihardianto13@gmail.com" class="text-sm font-semibold text-white hover:text-cyan-300 transition-colors truncate block">dwihardianto13@gmail.com</a>
+                <button data-copy-target="dwihardianto13@gmail.com" class="text-[11px] font-mono text-cyan-400 hover:underline mt-0.5 inline-block cursor-pointer">Click to copy email</button>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="text-xs font-mono text-slate-400 block">WHATSAPP / PHONE</span>
+                <a href="https://wa.me/6281368337015" target="_blank" class="text-sm font-semibold text-white hover:text-emerald-300 transition-colors block">+62 813-6833-7015</a>
+                <button data-copy-target="+6281368337015" class="text-[11px] font-mono text-emerald-400 hover:underline mt-0.5 inline-block cursor-pointer">Click to copy number</button>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 block">BASE LOCATION</span>
+                <span class="text-sm font-semibold text-white">Palembang, South Sumatra, Indonesia</span>
+                <span class="text-[11px] font-mono text-slate-400 block mt-0.5">Timezone: GMT+7 (WIB)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a href="https://www.linkedin.com/in/dwi-hardianto-299045104/" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/dwihardianto" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <div class="lg:col-span-7">
+          <form id="contact-form" class="glass-card rounded-2xl p-6 sm:p-8 border border-white/5 space-y-5">
+            <h3 class="text-lg font-bold text-white font-heading">Direct Inquiry & Consultation</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-mono text-slate-300">YOUR FULL NAME</label>
+                <input type="text" id="cf-name" required placeholder="e.g. Irvan Wijaya" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-mono text-slate-300">EMAIL ADDRESS</label>
+                <input type="email" id="cf-email" required placeholder="name@company.com" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-mono text-slate-300">SUBJECT / PURPOSE</label>
+              <input type="text" id="cf-subject" required placeholder="e.g. Enterprise GIS Architecture / IT Advisory" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition" />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-mono text-slate-300">PROJECT BRIEF / MESSAGE</label>
+              <textarea id="cf-message" rows="4" required placeholder="Tell me about your architectural challenge, project timeline, or objectives..." class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span>Transmit Message via WhatsApp Direct</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+            <p class="text-[11px] font-mono text-slate-400 text-center">
+              Direct connection with 0-server-lag instant delivery.
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="py-8 px-4 sm:px-8 border-t border-white/5 bg-black text-xs font-mono text-slate-400 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span>&copy; 2026 DWI HARDIANTO. All Rights Reserved.</span>
+        <span class="block sm:inline text-slate-500 sm:ml-2">Engineered with Three.js & Tailwind CSS.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="#home" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <span>Back to Top</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       FULLSCREEN PROJECT DETAIL LIGHTBOX MODAL
+       =================================================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden modal-backdrop-blur flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="relative w-full max-w-4xl glass-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl my-auto">
+      
+      <!-- Modal Close Button -->
+      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Body (Dynamic from assets/js/main.js) -->
+      <div id="modal-content"></div>
+
+    </div>
+  </div>
+
+  <!-- Scripts Execution -->
+  <script src="assets/js/three-scene.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
