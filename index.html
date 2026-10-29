@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -53,7 +53,10 @@
   <!-- Three.js (r128) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- GSAP for smooth animations -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -63,6 +66,9 @@
 </head>
 
 <body class="bg-obsidian text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress-bar"></div>
 
   <!-- 3D WebGL Background Canvas -->
   <canvas id="webgl-canvas"></canvas>
@@ -82,7 +88,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Logo / Monogram -->
-      <a href="#home" class="flex items-center gap-3 group">
+      <a href="#home" class="flex items-center gap-3 group magnetic-btn">
         <div class="relative w-11 h-11 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-cyan-500 via-indigo-500 to-violet-500 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
           <img src="assets/images/profile/djokerlogo.jpg" alt="Dwi Hardianto" class="w-full h-full object-cover rounded-[10px]" />
         </div>
@@ -117,7 +123,7 @@
         </button>
 
         <!-- CTA Direct Contact -->
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all transform hover:-translate-y-0.5">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all transform hover:-translate-y-0.5 magnetic-btn">
           <span>Let's Talk</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -153,7 +159,7 @@
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <!-- Left Column: Executive Bio & Hero Text -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-7 space-y-6 hero-content-anim">
         
         <!-- Live Status Pill -->
         <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(6,182,212,0.15)]">
@@ -176,14 +182,14 @@
 
         <!-- CTA Buttons -->
         <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#portfolio" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex items-center gap-2">
+          <a href="#portfolio" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex items-center gap-2 magnetic-btn">
             <span>Explore Enterprise Portfolio</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
 
-          <a href="#terminal" class="px-5 py-3.5 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-white text-sm font-mono flex items-center gap-2 hover:bg-white/5 transition-all">
+          <a href="#terminal" class="px-5 py-3.5 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-white text-sm font-mono flex items-center gap-2 hover:bg-white/5 transition-all magnetic-btn">
             <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -209,7 +215,7 @@
       </div>
 
       <!-- Right Column: Interactive 3D Canvas Focal & Holographic Profile Card -->
-      <div class="lg:col-span-5 relative flex justify-center">
+      <div class="lg:col-span-5 relative flex justify-center hero-profile-anim">
         
         <!-- Hologram Profile Card -->
         <div class="relative w-full max-w-sm glass-card rounded-3xl p-6 border border-white/10 shadow-2xl backdrop-blur-2xl animate-float-slow">
@@ -267,29 +273,37 @@
   </section>
 
   <!-- ===================================================================
-       METRICS & VALUE PROPOSITION TICKER
+       METRICS & VALUE PROPOSITION TICKER (WITH ANIMATED COUNTERS)
        =================================================================== -->
-  <section class="py-12 border-y border-white/5 bg-slate-950/40 backdrop-blur-md relative z-10">
+  <section class="py-12 border-y border-white/5 bg-slate-950/40 backdrop-blur-md relative z-10" data-reveal="fade-up">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-cyan">14+ Years</div>
+        <div class="space-y-1 metric-item">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-cyan flex items-center">
+            <span class="counter-number" data-target="14">0</span><span>+ Years</span>
+          </div>
           <p class="text-xs sm:text-sm text-slate-400 font-medium">Full-Spectrum IT & Engineering Journey</p>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-violet">25+ Systems</div>
+        <div class="space-y-1 metric-item">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-violet flex items-center">
+            <span class="counter-number" data-target="25">0</span><span>+ Systems</span>
+          </div>
           <p class="text-xs sm:text-sm text-slate-400 font-medium">Enterprise Web, Mobile & IoT Deployed</p>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400">99.98%</div>
+        <div class="space-y-1 metric-item">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400 flex items-center">
+            <span class="counter-number" data-target="99.98" data-decimals="2">0</span><span>%</span>
+          </div>
           <p class="text-xs sm:text-sm text-slate-400 font-medium">High Availability & Infrastructure SLA</p>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-gold">100K+ Data</div>
+        <div class="space-y-1 metric-item">
+          <div class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text-gold flex items-center">
+            <span class="counter-number" data-target="100">0</span><span>K+ Data</span>
+          </div>
           <p class="text-xs sm:text-sm text-slate-400 font-medium">Spatial Telemetry & Records Processed</p>
         </div>
 
@@ -304,7 +318,7 @@
     <div class="max-w-7xl mx-auto space-y-16">
       
       <!-- Section Title -->
-      <div class="max-w-3xl space-y-3">
+      <div class="max-w-3xl space-y-3" data-reveal="fade-up">
         <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
           <span class="w-2 h-2 rounded bg-cyan-400"></span>
           Executive Profile & Philosophy
@@ -318,7 +332,7 @@
       </div>
 
       <!-- Core Architectural Pillars Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger="card">
         
         <!-- Pillar 1 -->
         <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4 hover:border-cyan-500/40 transition-all">
@@ -383,7 +397,7 @@
   <section id="skills" class="py-24 px-4 sm:px-8 bg-slate-950/60 relative z-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto space-y-16">
       
-      <div class="text-center max-w-2xl mx-auto space-y-3">
+      <div class="text-center max-w-2xl mx-auto space-y-3" data-reveal="fade-up">
         <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Technical Mastery Matrix</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Comprehensive <span class="gradient-text-cyan">Full-Stack Capabilities</span>
@@ -394,7 +408,7 @@
       </div>
 
       <!-- Skills 4-Column Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger="card">
         
         <!-- Category 1: Backend & Cloud -->
         <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-5">
@@ -412,7 +426,7 @@
                 <span class="font-mono text-cyan-400">92%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[92%] h-full bg-cyan-400 rounded-full"></div>
+                <div class="h-full bg-cyan-400 rounded-full skill-bar-fill" data-percentage="92%"></div>
               </div>
             </div>
             <div>
@@ -421,7 +435,7 @@
                 <span class="font-mono text-cyan-400">95%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[95%] h-full bg-cyan-400 rounded-full"></div>
+                <div class="h-full bg-cyan-400 rounded-full skill-bar-fill" data-percentage="95%"></div>
               </div>
             </div>
             <div>
@@ -430,7 +444,7 @@
                 <span class="font-mono text-cyan-400">88%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[88%] h-full bg-cyan-400 rounded-full"></div>
+                <div class="h-full bg-cyan-400 rounded-full skill-bar-fill" data-percentage="88%"></div>
               </div>
             </div>
             <div>
@@ -439,7 +453,7 @@
                 <span class="font-mono text-cyan-400">85%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[85%] h-full bg-cyan-400 rounded-full"></div>
+                <div class="h-full bg-cyan-400 rounded-full skill-bar-fill" data-percentage="85%"></div>
               </div>
             </div>
           </div>
@@ -461,7 +475,7 @@
                 <span class="font-mono text-violet-400">90%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[90%] h-full bg-violet-400 rounded-full"></div>
+                <div class="h-full bg-violet-400 rounded-full skill-bar-fill" data-percentage="90%"></div>
               </div>
             </div>
             <div>
@@ -470,7 +484,7 @@
                 <span class="font-mono text-violet-400">94%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[94%] h-full bg-violet-400 rounded-full"></div>
+                <div class="h-full bg-violet-400 rounded-full skill-bar-fill" data-percentage="94%"></div>
               </div>
             </div>
             <div>
@@ -479,7 +493,7 @@
                 <span class="font-mono text-violet-400">88%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[88%] h-full bg-violet-400 rounded-full"></div>
+                <div class="h-full bg-violet-400 rounded-full skill-bar-fill" data-percentage="88%"></div>
               </div>
             </div>
             <div>
@@ -488,7 +502,7 @@
                 <span class="font-mono text-violet-400">86%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[86%] h-full bg-violet-400 rounded-full"></div>
+                <div class="h-full bg-violet-400 rounded-full skill-bar-fill" data-percentage="86%"></div>
               </div>
             </div>
           </div>
@@ -510,7 +524,7 @@
                 <span class="font-mono text-emerald-400">92%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[92%] h-full bg-emerald-400 rounded-full"></div>
+                <div class="h-full bg-emerald-400 rounded-full skill-bar-fill" data-percentage="92%"></div>
               </div>
             </div>
             <div>
@@ -519,7 +533,7 @@
                 <span class="font-mono text-emerald-400">89%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[89%] h-full bg-emerald-400 rounded-full"></div>
+                <div class="h-full bg-emerald-400 rounded-full skill-bar-fill" data-percentage="89%"></div>
               </div>
             </div>
             <div>
@@ -528,7 +542,7 @@
                 <span class="font-mono text-emerald-400">96%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[96%] h-full bg-emerald-400 rounded-full"></div>
+                <div class="h-full bg-emerald-400 rounded-full skill-bar-fill" data-percentage="96%"></div>
               </div>
             </div>
             <div>
@@ -537,7 +551,7 @@
                 <span class="font-mono text-emerald-400">84%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[84%] h-full bg-emerald-400 rounded-full"></div>
+                <div class="h-full bg-emerald-400 rounded-full skill-bar-fill" data-percentage="84%"></div>
               </div>
             </div>
           </div>
@@ -559,7 +573,7 @@
                 <span class="font-mono text-amber-400">96%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[96%] h-full bg-amber-400 rounded-full"></div>
+                <div class="h-full bg-amber-400 rounded-full skill-bar-fill" data-percentage="96%"></div>
               </div>
             </div>
             <div>
@@ -568,7 +582,7 @@
                 <span class="font-mono text-amber-400">94%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[94%] h-full bg-amber-400 rounded-full"></div>
+                <div class="h-full bg-amber-400 rounded-full skill-bar-fill" data-percentage="94%"></div>
               </div>
             </div>
             <div>
@@ -577,7 +591,7 @@
                 <span class="font-mono text-amber-400">92%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[92%] h-full bg-amber-400 rounded-full"></div>
+                <div class="h-full bg-amber-400 rounded-full skill-bar-fill" data-percentage="92%"></div>
               </div>
             </div>
             <div>
@@ -586,7 +600,7 @@
                 <span class="font-mono text-amber-400">93%</span>
               </div>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div class="w-[93%] h-full bg-amber-400 rounded-full"></div>
+                <div class="h-full bg-amber-400 rounded-full skill-bar-fill" data-percentage="93%"></div>
               </div>
             </div>
           </div>
@@ -604,7 +618,7 @@
     <div class="max-w-7xl mx-auto space-y-12">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8" data-reveal="fade-up">
         <div class="space-y-3 max-w-2xl">
           <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
             <span class="w-2 h-2 rounded bg-cyan-400"></span>
@@ -637,7 +651,7 @@
 
       <!-- Projects Grid Container (Dynamic via JS) -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Rendered by assets/js/main.js -->
+        <!-- Rendered by assets/js/main.js with stagger animation -->
       </div>
 
     </div>
@@ -649,7 +663,7 @@
   <section id="experience" class="py-24 px-4 sm:px-8 bg-slate-950/60 relative z-10 border-t border-white/5">
     <div class="max-w-5xl mx-auto space-y-16">
       
-      <div class="text-center max-w-2xl mx-auto space-y-3">
+      <div class="text-center max-w-2xl mx-auto space-y-3" data-reveal="fade-up">
         <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Chronological Milestones</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           14+ Years of <span class="gradient-text-cyan">Professional Leadership</span>
@@ -660,10 +674,10 @@
       </div>
 
       <!-- Vertical Timeline -->
-      <div class="relative border-l border-cyan-500/20 ml-4 sm:ml-8 space-y-12">
+      <div class="relative border-l border-cyan-500/20 ml-4 sm:ml-8 space-y-12 timeline-container">
         
         <!-- Job 1 -->
-        <div class="relative pl-8 sm:pl-10 group">
+        <div class="relative pl-8 sm:pl-10 group timeline-item" data-reveal="fade-left">
           <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center group-hover:scale-125 transition-transform">
             <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
           </div>
@@ -689,7 +703,7 @@
         </div>
 
         <!-- Job 2 -->
-        <div class="relative pl-8 sm:pl-10 group">
+        <div class="relative pl-8 sm:pl-10 group timeline-item" data-reveal="fade-left">
           <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-violet-400 flex items-center justify-center group-hover:scale-125 transition-transform">
             <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
           </div>
@@ -713,7 +727,7 @@
         </div>
 
         <!-- Job 3 -->
-        <div class="relative pl-8 sm:pl-10 group">
+        <div class="relative pl-8 sm:pl-10 group timeline-item" data-reveal="fade-left">
           <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-blue-400 flex items-center justify-center group-hover:scale-125 transition-transform">
             <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
           </div>
@@ -738,7 +752,7 @@
         </div>
 
         <!-- Job 4 -->
-        <div class="relative pl-8 sm:pl-10 group">
+        <div class="relative pl-8 sm:pl-10 group timeline-item" data-reveal="fade-left">
           <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-slate-400 flex items-center justify-center group-hover:scale-125 transition-transform">
             <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
           </div>
@@ -756,7 +770,7 @@
         </div>
 
         <!-- Job 5 -->
-        <div class="relative pl-8 sm:pl-10 group">
+        <div class="relative pl-8 sm:pl-10 group timeline-item" data-reveal="fade-left">
           <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-emerald-400 flex items-center justify-center group-hover:scale-125 transition-transform">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           </div>
@@ -782,7 +796,7 @@
        INTERACTIVE CYBER TERMINAL HUD
        =================================================================== -->
   <section id="terminal" class="py-24 px-4 sm:px-8 relative z-10">
-    <div class="max-w-4xl mx-auto space-y-8">
+    <div class="max-w-4xl mx-auto space-y-8" data-reveal="fade-up">
       
       <div class="text-center max-w-2xl mx-auto space-y-3">
         <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-2">
@@ -849,7 +863,7 @@
   <section id="contact" class="py-24 px-4 sm:px-8 bg-slate-950/80 relative z-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto space-y-16">
       
-      <div class="text-center max-w-2xl mx-auto space-y-3">
+      <div class="text-center max-w-2xl mx-auto space-y-3" data-reveal="fade-up">
         <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-2">
           <span class="w-2 h-2 rounded bg-cyan-400"></span>
           Direct Communication Channels
@@ -862,7 +876,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12" data-stagger="card">
         
         <!-- Contact Coordinates Card -->
         <div class="lg:col-span-5 space-y-6">
@@ -917,11 +931,11 @@
 
           <!-- Social Links -->
           <div class="flex items-center gap-3">
-            <a href="https://www.linkedin.com/in/dwi-hardianto-299045104/" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2">
+            <a href="https://www.linkedin.com/in/dwi-hardianto-299045104/" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2 magnetic-btn">
               <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/dwihardianto" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2">
+            <a href="https://github.com/dwihardianto" target="_blank" class="flex-1 glass-card p-3 rounded-xl border border-white/5 hover:border-cyan-500/40 text-center text-xs font-mono text-slate-300 hover:text-white transition flex items-center justify-center gap-2 magnetic-btn">
               <svg class="w-4 h-4 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               <span>GitHub</span>
             </a>
@@ -956,7 +970,7 @@
               <textarea id="cf-message" rows="4" required placeholder="Tell me about your architectural challenge, project timeline, or objectives..." class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition resize-none"></textarea>
             </div>
 
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-semibold text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer magnetic-btn">
               <span>Transmit Message via WhatsApp Direct</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -980,7 +994,7 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <span>&copy; 2026 DWI HARDIANTO. All Rights Reserved.</span>
-        <span class="block sm:inline text-slate-500 sm:ml-2">Engineered with Three.js & Tailwind CSS.</span>
+        <span class="block sm:inline text-slate-500 sm:ml-2">Engineered with Three.js, GSAP & Lenis Smooth Scroll.</span>
       </div>
       <div class="flex items-center gap-4 text-slate-400">
         <a href="#home" class="hover:text-cyan-400 transition-colors flex items-center gap-1">

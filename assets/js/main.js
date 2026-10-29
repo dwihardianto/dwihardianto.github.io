@@ -1,13 +1,58 @@
 /**
  * DWI HARDIANTO - WORLD CLASS PERSONAL BRANDING INTERACTIONS
- * High-performance, zero external dependency vanilla JS
+ * Powered by Lenis Smooth Scroll, GSAP ScrollTrigger & Web Audio Synth
  */
 
 (function () {
   'use strict';
 
   // ==========================================
-  // 1. DATA REPOSITORY: ENTERPRISE PROJECTS
+  // 1. LENIS SMOOTH SCROLL & GSAP SYNC
+  // ==========================================
+  let lenis = null;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+      infinite: false
+    });
+
+    // Sync with GSAP ScrollTrigger if present
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  }
+
+  // Top Scroll Progress Bar Handler
+  const progressBar = document.getElementById('scroll-progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function () {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }, { passive: true });
+  }
+
+  // ==========================================
+  // 2. DATA REPOSITORY: ENTERPRISE PROJECTS
   // ==========================================
   const projectsData = [
     {
@@ -220,7 +265,7 @@
   ];
 
   // ==========================================
-  // 2. SYNTHESIZED WEB AUDIO SOUND FX
+  // 3. SYNTHESIZED WEB AUDIO SOUND FX
   // Zero external audio files required!
   // ==========================================
   let audioCtx = null;
@@ -258,9 +303,7 @@
 
       osc.start();
       osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-      // Audio autoplay policy fallback
-    }
+    } catch (e) {}
   }
 
   function playChime(freq = 1200) {
@@ -294,7 +337,7 @@
       if (soundEnabled) {
         audioToggleBtn.classList.remove('muted');
         audioToggleBtn.innerHTML = `
-          <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
           </svg>
           <span class="text-xs text-cyan-300 font-mono hidden sm:inline">AUDIO ON</span>
@@ -304,7 +347,7 @@
       } else {
         audioToggleBtn.classList.add('muted');
         audioToggleBtn.innerHTML = `
-          <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
           </svg>
@@ -316,7 +359,7 @@
   }
 
   // ==========================================
-  // 3. MOUSE SPOTLIGHT FOLLOWER
+  // 4. MOUSE SPOTLIGHT FOLLOWER
   // ==========================================
   const spotlight = document.querySelector('.mouse-spotlight');
   if (spotlight && window.innerWidth >= 768) {
@@ -340,7 +383,25 @@
   }
 
   // ==========================================
-  // 4. HEADER SCROLL DETECTION & NAVIGATION
+  // 5. MAGNETIC BUTTONS EFFECT
+  // ==========================================
+  if (window.innerWidth >= 768) {
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', function (e) {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = 'translate(0px, 0px)';
+      });
+    });
+  }
+
+  // ==========================================
+  // 6. HEADER SCROLL DETECTION & NAVIGATION
   // ==========================================
   const header = document.querySelector('header.site-header');
   window.addEventListener('scroll', function () {
@@ -368,7 +429,7 @@
   }
 
   // ==========================================
-  // 5. RENDER PROJECTS & 3D TILT CARDS
+  // 7. RENDER PROJECTS & 3D TILT CARDS
   // ==========================================
   const projectsGrid = document.getElementById('projects-grid');
 
@@ -382,9 +443,8 @@
 
     filtered.forEach((p, idx) => {
       const card = document.createElement('div');
-      card.className = 'glass-card rounded-2xl p-6 flex flex-col justify-between group tilt-card project-card cursor-pointer';
+      card.className = 'glass-card rounded-2xl p-6 flex flex-col justify-between group tilt-card project-card cursor-pointer opacity-0';
       card.dataset.projectId = p.id;
-      card.style.animation = `slideInToast 0.4s ease ${idx * 0.08}s forwards`;
 
       const techBadgesHtml = p.techStack.slice(0, 4).map(t => `<span class="tech-pill">${t}</span>`).join('');
       const moreTechCount = p.techStack.length > 4 ? `<span class="tech-pill text-cyan-400">+${p.techStack.length - 4}</span>` : '';
@@ -452,6 +512,21 @@
 
       projectsGrid.appendChild(card);
     });
+
+    // GSAP Stagger Entrance for Project Cards
+    if (typeof gsap !== 'undefined') {
+      gsap.to('.project-card', {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+        clearProps: 'transform'
+      });
+    } else {
+      document.querySelectorAll('.project-card').forEach(c => c.style.opacity = '1');
+    }
   }
 
   // 3D Tilt Matrix Calculation
@@ -481,7 +556,17 @@
       filterTabs.forEach(t => t.classList.remove('active'));
       this.classList.add('active');
       const filter = this.dataset.filter;
-      renderProjects(filter);
+
+      if (typeof gsap !== 'undefined') {
+        gsap.to('.project-card', {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.2,
+          onComplete: () => renderProjects(filter)
+        });
+      } else {
+        renderProjects(filter);
+      }
     });
   });
 
@@ -489,7 +574,7 @@
   renderProjects('all');
 
   // ==========================================
-  // 6. FULLSCREEN PROJECT DETAIL MODAL
+  // 8. FULLSCREEN PROJECT DETAIL MODAL
   // ==========================================
   const modal = document.getElementById('project-modal');
   const modalContent = document.getElementById('modal-content');
@@ -602,12 +687,14 @@
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 
   function closeModal() {
     playFuturisticClick(600);
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
+    if (lenis) lenis.start();
   }
 
   if (modalCloseBtn) {
@@ -629,7 +716,127 @@
   });
 
   // ==========================================
-  // 7. INTERACTIVE TERMINAL HUD
+  // 9. GSAP SCROLL REVEALS & MOTION TIMELINES
+  // ==========================================
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+
+    // Hero Stagger Animation on Initial Load
+    gsap.from('.hero-content-anim > *', {
+      opacity: 0,
+      y: 35,
+      duration: 0.9,
+      stagger: 0.12,
+      ease: 'power3.out',
+      delay: 0.1
+    });
+
+    gsap.from('.hero-profile-anim', {
+      opacity: 0,
+      scale: 0.92,
+      y: 40,
+      duration: 1.1,
+      ease: 'power3.out',
+      delay: 0.35
+    });
+
+    // Fade-up Section Headers & Blocks
+    document.querySelectorAll('[data-reveal="fade-up"]').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 45,
+        duration: 0.85,
+        ease: 'power3.out'
+      });
+    });
+
+    // Staggered Cards (About Pillars, Skills, Contact)
+    document.querySelectorAll('[data-stagger="card"]').forEach(container => {
+      const cards = container.children;
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 50,
+        scale: 0.96,
+        duration: 0.75,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+    });
+
+    // Timeline Items Animation
+    document.querySelectorAll('.timeline-item').forEach((item, idx) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        x: -40,
+        duration: 0.8,
+        delay: idx * 0.05,
+        ease: 'power3.out'
+      });
+    });
+
+    // Skill Progress Bars Fill Trigger
+    ScrollTrigger.create({
+      trigger: '#skills',
+      start: 'top 75%',
+      onEnter: () => {
+        document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          const targetWidth = bar.dataset.percentage || '80%';
+          bar.style.width = targetWidth;
+        });
+      }
+    });
+
+    // Animated Numbers Counter in Metrics Section
+    ScrollTrigger.create({
+      trigger: '.metric-item',
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        document.querySelectorAll('.counter-number').forEach(counter => {
+          const target = parseFloat(counter.dataset.target);
+          const decimals = parseInt(counter.dataset.decimals || 0);
+          const obj = { val: 0 };
+
+          gsap.to(obj, {
+            val: target,
+            duration: 2.0,
+            ease: 'power2.out',
+            onUpdate: () => {
+              counter.textContent = decimals > 0 
+                ? obj.val.toFixed(decimals) 
+                : Math.floor(obj.val);
+            }
+          });
+        });
+      }
+    });
+
+  } else {
+    // Fallback if GSAP is blocked
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.percentage || '80%';
+    });
+    document.querySelectorAll('.counter-number').forEach(counter => {
+      counter.textContent = counter.dataset.target;
+    });
+  }
+
+  // ==========================================
+  // 10. INTERACTIVE TERMINAL HUD
   // ==========================================
   const terminalInput = document.getElementById('terminal-input');
   const terminalOutput = document.getElementById('terminal-output');
@@ -734,7 +941,7 @@
   }
 
   // ==========================================
-  // 8. TOAST NOTIFICATION UTILITY
+  // 11. TOAST NOTIFICATION UTILITY
   // ==========================================
   function showToast(message, type = 'success') {
     const container = document.getElementById('toast-container');
@@ -775,7 +982,7 @@
   });
 
   // ==========================================
-  // 9. CONTACT FORM INTERACTIVE HANDLER
+  // 12. CONTACT FORM INTERACTIVE HANDLER
   // ==========================================
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
@@ -805,7 +1012,8 @@
   window.DwiPortfolio = {
     projects: projectsData,
     openProject: openProjectModal,
-    showToast: showToast
+    showToast: showToast,
+    lenis: lenis
   };
 
 })();
